@@ -53,7 +53,7 @@ def add():
     conn.commit()
     conn.close()
     return redirect("/")
-
+init()
 if __name__ == "__main__":
     init()
     app.run(debug=True)
