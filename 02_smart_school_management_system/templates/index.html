@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>Smart School Management System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Smart School Management System</h1>
+<p>A positive information system for school administration.</p>
+<div class="card"><h2>Average Score: {{ avg }}%</h2></div>
+<form action="/add" method="post">
+<input name="first_name" placeholder="First name" required>
+<input name="last_name" placeholder="Last name" required>
+<input name="guardian_email" placeholder="Guardian email">
+<input type="date" name="enrollment_date">
+<button>Add Student</button>
+</form>
+<table>
+<tr><th>Name</th><th>Guardian Email</th><th>Enrollment Date</th></tr>
+{% for s in students %}
+<tr><td>{{s.first_name}} {{s.last_name}}</td><td>{{s.guardian_email}}</td><td>{{s.enrollment_date}}</td></tr>
+{% endfor %}
+</table>
+</body>
+</html>
